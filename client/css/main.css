@@ -1,0 +1,252 @@
+html, body{
+    font-family: sans-serif;
+    font-weight: 100;
+    height: 100%;
+    margin: 0;
+    background: #132756; /* Old browsers */
+    background: -moz-linear-gradient(top, #132756 0%, #011224 100%); 
+    background: -webkit-linear-gradient(top, #132756 0%,#011224 100%);
+    background: linear-gradient(to bottom, #132756 0%,#011224 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#132756', endColorstr='#011224',GradientType=0 );
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+*{box-sizing: border-box}
+
+/* interface */
+
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 0
+    }
+    main h1{
+        font-size: 1rem;
+        font-weight: 100;
+        position: fixed;
+        top: 10px;
+        left: 0;
+        letter-spacing: 5px;
+        width:100%;
+        text-align: center;
+    }
+
+    .result{
+        font-size: 1rem;
+        position: fixed;
+        transform: rotate(-90deg);
+        letter-spacing: 5px;
+        width: 100vh;
+        text-align: center;
+        top: 50%
+    }
+    #result1{
+        left:calc(30px - 50vh);;
+    }
+    #result2{
+        transform: rotate(90deg);
+        left: auto;
+        right:calc(30px - 50vh);
+    }
+    #copyright {
+        font-size: 1rem;
+        letter-spacing: 3px;
+        position: fixed;
+        bottom: 20px;
+    }
+/* cases */
+    #morpion.win .elem{
+        cursor: auto;
+    }
+
+    #morpion, .elem {
+        border: 1px solid #1e3b7e;
+    }
+
+    .elem{
+        position: relative;
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        transition: .3s; 
+        cursor: pointer;
+    }
+
+/* player */
+    .elem.player1, .elem.player2 {
+        cursor: auto
+    }
+
+    .player1 .elem:not(.use):hover:before, 
+    .elem.player1:before{
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .player1 .elem:not(.use):hover:after, 
+    .elem.player1::after {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .player1 .elem:not(.use):hover:before, 
+    .player1 .elem:not(.use):hover:after, 
+    .elem.player1:after, 
+    .elem.player1:before {
+        content: '';
+        display: block;
+        width: 13px;
+        height: 80px;
+        background: #fff;
+        border-radius: 2px;
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        margin-left: -6px;
+        transition: background-color .3s
+    }
+        
+    .player2 .elem:not(.use):hover:before, 
+    .elem.player2::before{
+        content:'';
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 13px solid #fff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        transition: border-color .3s
+    }
+    
+    
+    .player1 .elem:not(.use):hover:before, 
+    .player1 .elem:not(.use):hover:after{
+        background-color: #1e3b7e;
+    } 
+     
+    .player2 .elem:not(.use):hover:before{
+        border-color: #1e3b7e;
+    }
+
+/* popin */
+    #overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center
+    }
+    #popin{
+        background-color: #132756;
+        padding: 3rem 5rem;
+        border-radius: 2px;
+        -webkit-box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.75);
+    }
+    #overlay.hidden{
+        display: none;
+    }
+
+/* form */
+form{
+    text-align: center
+}
+    input, button, label{
+        font-family: 'Roboto', sans-serif;
+        display: block;
+        max-width: calc(100% - 40px);
+        margin: 20px auto;
+        border-radius: 2px;
+        padding: 20px 25px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        letter-spacing: 3px;
+        transition: .3s;
+        font-size: 1rem
+    }
+    input{
+        width: 600px;
+        background-color: transparent;
+        border: 2px solid #1e3b7e;
+    }
+    input[type="radio"]{
+        display: none;
+    }
+    input[type="radio"] + label{
+        font-size: 1rem;
+        display: inline-block;
+        border: 2px solid #1e3b7e;
+        margin: 20px;
+        color: #1e3b7e
+    }
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #1e3b7e; opacity: 1;
+      }
+      ::-moz-placeholder { /* Firefox 19+ */
+        color: #1e3b7e; opacity: 1;
+      }
+      :-ms-input-placeholder { /* IE 10+ */
+        color: #1e3b7e; opacity: 1;
+      }
+      :-moz-placeholder { /* Firefox 18- */
+        color: #1e3b7e; opacity: 1;
+      }
+    input:hover, input:focus,input[type="radio"]:checked + label, 
+    input[type="radio"] + label:hover{
+        border-color:#fff;
+        color: #fff
+    }
+    button{
+        border: none;
+        background-color: #132756;
+        text-transform: uppercase;
+        margin-top: 40px;
+        padding : 20px 30px;
+        -webkit-font-smoothing: antialiased;
+        border: none;
+        display: inline-block;
+        font-weight: 700;
+        text-decoration: none;
+        user-select: none;
+        letter-spacing: 5px;
+        color: white;
+        -webkit-transition: background-color 0.1s ease-out;
+        -moz-transition: background-color 0.1s ease-out;
+        transition: background-color 0.1s ease-out; 
+    
+        transform: translateZ(0);
+        outline: 90px solid transparent !important; 
+    }
+
+    button:hover {
+        background-color: #132756;
+        color: #fff; 
+    }
+    button:focus {
+        outline: none;
+        color: #fff; 
+    }
+    svg {
+        overflow: hidden;
+    }
+    .svg-filters {
+        position: absolute;
+        visibility: hidden;
+        width: 1px;
+        height: 1px;
+    }

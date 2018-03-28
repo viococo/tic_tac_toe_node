@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>tic.tac.toe</title>
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <h1>tic.tac.toe</h1>
+        <div class="form">
+            <form action="" method="post" name="start">
+                <input type="radio" name="width" value="3" id="w3" checked><label for="w3">3x3</label>
+                <input type="radio" name="width" value="4" id="w4"><label for="w4">4x4</label>
+                <input type="radio" name="width" value="5" id="w5"><label for="w5">5x5</label>
+                <input type="radio" name="width" value="6" id="w6"><label for="w6">6x6</label>
+                <input type="text" name="player1" id="player1" placeholder="joueur 1">
+                <input type="text" name="player2" id="player2" placeholder="joueur 2">
+
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
+                    <defs>
+                        <filter id="filter-glitch-3">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.000001" numOctaves="1" result="warp" />
+                            <feOffset dx="-90" dy="-90" result="warpOffset" />
+                            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset" />
+                        </filter>
+                    </defs>
+                </svg>
+                <button id="component-7">Start Game</button>
+
+            </form>
+        </div>
+        <div class="result" id="result1"><span class="pseudo">joueur 1</span> : <span class="score">0 pt</span></div>
+
+        <div class="result" id="result2"> <span class="pseudo">joueur 2</span> : <span class="score">0 pt</span></div>
+
+        <div id="copyright"> made with love by viococo </div>
+        <div id="morpion"></div>
+        <div id="overlay" class="hidden">
+            <div id="popin">
+                <h2>Tristesse,</h2>
+                <p>personne ne gagne</p>
+            </div>
+        </div>
+    </main>
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/libs/TweenMax.min.js"></script>
+    <script src="js/Site.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

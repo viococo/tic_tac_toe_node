@@ -1,0 +1,21 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build": "babel src --out-dir server",
+    "start": "npm run build && node server/app.js"
+  },
+  "author": "Viococo",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "npm": "^5.8.0"
+  }
+}
