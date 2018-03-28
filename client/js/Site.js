@@ -23,6 +23,7 @@ class Site{ // toutes les fonctions/letiables en rapport à la partie front
             url: e.url,
             data: JSON.stringify(e.data),
             dataType: 'JSON',
+            timout: 1000,
             contentType:'application/JSON',
             type: 'POST',
             success: function (rep) {
