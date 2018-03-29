@@ -44,9 +44,15 @@ Vous pouvez jouer !
 
 ## TODO
 [] Jouer sur deux fenêtres
+
 [] Choix du salon grâce à un uuid
+
 [] Historique
+
 [] Score board
+
 [] IA (2 levels)
+
     [] random
+    
     [] intelligent
