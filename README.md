@@ -10,6 +10,13 @@ Pour installer le projet il faut faire
 Vous pouvez jouer !
 
 ## Routes de l'api en POST
+### /
+**DESCRIPTION** liste des autres routes
+    
+    PARAMETRES D'ENTREE : NULL
+
+    PARAMETRE DE SORTE : NULL
+
 ### /init 
 **DESCRIPTION** commence une nouvelle partie
     
@@ -43,16 +50,10 @@ Vous pouvez jouer !
     }
 
 ## TODO
-[] Jouer sur deux fenêtres
-
-[] Choix du salon grâce à un uuid
-
-[] Historique
-
-[] Score board
-
-[] IA (2 levels)
-
-    [] random
-    
-    [] intelligent
+* Jouer sur deux fenêtres
+* Choix du salon grâce à un uuid
+* Historique
+* Score board
+* IA (2 levels)
+    * random
+    * intelligent
