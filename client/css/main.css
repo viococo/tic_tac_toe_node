@@ -74,7 +74,11 @@ html, body{
         transition: .3s; 
         cursor: pointer;
     }
-
+    .heart{
+        width: 25px;
+        margin-bottom: -6px;
+        margin-right: 3px;
+    }
 /* player */
     .elem.player1, .elem.player2 {
         cursor: auto
